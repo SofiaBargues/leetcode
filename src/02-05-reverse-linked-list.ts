@@ -10,15 +10,17 @@
  * }
  */
 
+
+// 1 2 3
 function reverseList(head: ListNode | null): ListNode | null {
-    let curr = head // 1
+    let curr = head // Curr is head
     let prev = null
 
     while(curr){
-        const next = curr.next // 2
-        curr.next = prev // null
-        prev = curr // 1
-        curr = next // 2
+        const next = curr.next // Save next
+        curr.next = prev // Point curr link to prev (reverse)
+        prev = curr // Advance prev
+        curr = next // Advance curr (with saved next)
     }
     return prev
 };
