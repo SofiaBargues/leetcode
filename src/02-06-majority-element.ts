@@ -1,4 +1,20 @@
 function majorityElement(nums: number[]): number {
+    let candidate = undefined
+    let count = 0
+    for(const num of nums){
+        if(count == 0){
+            candidate = num
+            count++
+        }else if(candidate == num){
+            count++
+        }else{
+            count--
+        }
+    }
+};
+
+
+function majorityElementTrivial(nums: number[]): number {
     const counter = new Map<number,number>()
     for(let i=0; i<nums.length; i++){
         const num = nums[i]
