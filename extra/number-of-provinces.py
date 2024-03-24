@@ -17,7 +17,6 @@ class Solution:
             if p1 == p2:
                 # Already connected
                 return 0
-            
             # Disconencted
             if ranks[p1] >= ranks[p2]:
                 parents[p2] = p1
@@ -26,7 +25,7 @@ class Solution:
                 parents[p1] = p2
                 ranks[p2] += ranks[p1]
             return 1
-        
+
         provinces = n
         for i in range(1, n):
             for j in range(0,i):
