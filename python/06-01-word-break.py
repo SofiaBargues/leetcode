@@ -3,7 +3,7 @@ from itertools import chain
 
 
 
-class Solution2:
+class SolutionDpBottomUp:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
         # Should do DP
         wordSet = set(wordDict)
