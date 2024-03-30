@@ -7,6 +7,25 @@
 class Solution:
 
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+        q = deque([root])
+        path = []
+
+        while len(q):
+            level_size = len(q)
+
+            rightmost = None
+            for _ in range(level_size):
+                node = q.popleft()
+                if node:
+                    rightmost = node
+                    q.append(node.left)
+                    q.append(node.right)
+            if rightmost:
+                path.append(rightmost.val)
+
+        return path
+
+    def rightSideViewLevelArray(self, root: Optional[TreeNode]) -> List[int]:
         path: List[int] = []
 
         if root is None:
