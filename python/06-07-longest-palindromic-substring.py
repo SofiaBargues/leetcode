@@ -6,11 +6,11 @@ class Solution:
                 largest = s[l:r+1]
             l-=1
             r+=1
-        return largest        
+        return largest
 
     def longestPalindrome(self, s: str) -> str:
         largest = ''
-        for i in range(len(s)):            
+        for i in range(len(s)):
             largest = self.expandPalindrome(s, largest, i, i)
             largest = self.expandPalindrome(s, largest, i, i+1)
         return largest
