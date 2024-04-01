@@ -18,14 +18,17 @@ class Solution:
 
         # iterate over digits in digits
         # For each digit
+        # O(n)
         for digit in digits:
             letters = num_to_letters[digit]
             new_combinations = []
             # Iterate over letters and add to combinations
+            # O(1)
             for letter in letters:
                 new_combinations += [partial + letter for partial in combinations]
 
             combinations = new_combinations
 
         # Return combinations
+        # time and space # O(4^n)
         return combinations
