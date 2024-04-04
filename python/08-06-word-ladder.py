@@ -12,9 +12,6 @@ class Solution:
             for j in range(len(word)):
                 pattern = word[:j] + "*" + word[j + 1 :]
                 graph[pattern].append(word)
-        
- 
-        print(graph)
 
         # BFS counting distance
         seen = set()
@@ -23,7 +20,7 @@ class Solution:
 
         while len(queue):
             word, dist = queue.popleft()
-        
+
             # return distance if found
             if word == endWord:
                 return dist+1
