@@ -13,8 +13,8 @@ class Solution:
                 sFreq[rChar]+=1
                 if sFreq[rChar] <= tFreq[rChar]:
                     to_be_taken -= 1
-            
-            # If string found 
+
+            # If string found
             while to_be_taken == 0:
                 # Account l char
                 lChar = s[l]
@@ -27,6 +27,6 @@ class Solution:
                         to_be_taken+=1
                 # Move left
                 l+=1
-            r+=1     
+            r+=1
 
         return min_substring if min_substring is not None else ""
