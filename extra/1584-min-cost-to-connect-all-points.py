@@ -13,25 +13,24 @@ class Solution:
                 adjList[j].append((dist, i))
 
 
-        seen: Set[int] = set([0])
+
+        seen: Set[int] = set()
         cost = 0
-        dist_heap = []
+        dist_heap = [(0,0)]
         curr = 0
         while len(seen) < len(points):
-            for dist, node in adjList[curr]:
-                if node in seen:
-                    continue
-                heapq.heappush(dist_heap, (dist, node))
-
-            closest = None
-            while closest is None:
-                candidate = heapq.heappop(dist_heap)
-                if candidate[1] not in seen:
-                    closest = candidate
+            candidate = heapq.heappop(dist_heap)
+            if candidate[1] in seen:
+                continue
             
             cost += candidate[0] 
             curr = candidate[1]
             seen.add(curr)
+
+            for dist, node in adjList[curr]:
+                if node in seen:
+                    continue
+                heapq.heappush(dist_heap, (dist, node))
 
 
         return cost
