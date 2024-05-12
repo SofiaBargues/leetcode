@@ -1,4 +1,7 @@
-# grind-75-typescript
-Grind 75 solutions written in TypeScript
+# Coding Problems
 
-[Grind 75 problems list](https://www.techinterviewhandbook.org/grind75)
+A collection of coding problems and solutions.
+
+Guides:
+- [Grind 75](https://www.techinterviewhandbook.org/grind75)
+- [Neet Code](https://neetcode.io/roadmap)
