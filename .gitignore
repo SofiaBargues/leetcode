@@ -17,3 +17,5 @@ venv/
 # Optional eslint cache
 .eslintcache
 
+# Don't share interview problems
+interviews
