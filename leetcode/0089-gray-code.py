@@ -17,6 +17,7 @@
 # 2. Try shifting 1 number with xor and if not in range, use it
 
 # There is a math proof why this always work, but not a great thing to figure out in the moment
+# There is an easier solution without repeated iterations
 
 
 class Solution:
