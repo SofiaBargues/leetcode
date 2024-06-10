@@ -6,3 +6,8 @@ class Solution:
             if h != exp:
                 diff_count+=1
         return diff_count
+
+
+class SolutionOneliner:
+    def heightChecker(self, heights: List[int]) -> int:
+        return sum(1 if h != exp else 0 for  h, exp in zip(heights, sorted(heights)))
