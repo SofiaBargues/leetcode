@@ -6,6 +6,19 @@
 
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
+        A, B = headA, headB
+
+        while A != B:
+            A = A.next if A else headB
+            B = B.next if B else headA
+
+        # Either the intersection point or the end
+        return A
+
+
+
+class SolutionUsingSet:
+    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
         seen = set()
         while headA:
             seen.add(headA)
