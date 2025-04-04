@@ -1,24 +1,35 @@
 /**
- * @param {number[]} players
- * @param {number[]} trainers
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
  * @return {number}
  */
-var matchPlayersAndTrainers = function (players, trainers) {
-  let i = 0;
-  let j = 0;
-  let macht = 0;
-  players.sort((a, b) => a - b);
-  trainers.sort((a, b) => a - b);
+var deepestLeavesSum = function (root) {
 
-  while (i <= players.length - 1 && j <= trainers.length - 1) {
-    if (players[i] <= trainers[j]) {
-      macht++;
-      i++;
-      j++;
-    } else if (players[i] > trainers[j]) {
-      j++;
+    if (!root) return []
+
+    let queue = [root];
+    let lastLevel = [];
+
+    while (queue.length > 0) {
+        let level = []
+        let levelSize = queue.length;
+        for (let i = 0; i < levelSize; i++) {
+            let node = queue.shift()
+            level.push(node.val)
+
+            if (node.left) queue.push(node.left)
+            if (node.right) queue.push(node.right)
+        }
+        lastLevel = level
     }
-  }
 
-  return macht;
+
+    return lastLevel.reduce((acc, curr) => acc + curr, 0)
 };
