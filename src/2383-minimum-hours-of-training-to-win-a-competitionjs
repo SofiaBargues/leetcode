@@ -1,0 +1,30 @@
+
+
+/**
+ * @param {number} initialEnergy
+ * @param {number} initialExperience
+ * @param {number[]} energy
+ * @param {number[]} experience
+ * @return {number}
+ */
+var minNumberOfHours = function (initialEnergy, initialExperience, energy, experience) {
+    let n = energy.length
+    let trainingHours = 0
+    for (let i = 0; i <= n - 1; i++) {
+        //energy
+        if (initialEnergy > energy[i]) {
+            initialEnergy -= energy[i]
+        } else {
+            trainingHours += (energy[i] - initialEnergy + 1)
+            initialEnergy = 1
+        }
+        //experience
+        if (initialExperience > experience[i]) {
+            initialExperience += experience[i]
+        } else {
+            trainingHours += (experience[i] - initialExperience + 1)
+            initialExperience += (experience[i] - initialExperience + 1) + experience[i]
+        }
+    }
+    return trainingHours
+};
