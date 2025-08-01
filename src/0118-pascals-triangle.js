@@ -2,6 +2,41 @@
  * @param {number} numRows
  * @return {number[][]}
  */
+function rowBuilder(arr) {
+    let newRow = []
+    for (let i = 0; i <= arr.length; i++) {
+        const a = arr[i-1] || 0
+        const b = arr[i] || 0
+        newRow.push(a+b)
+    }
+    return newRow
+}
+
+var generate = function (numRows) {
+    let result = [[1]]
+    let missingRows = numRows
+    // increase up to n rows result.length
+    while (missingRows > 1) {
+        //build the new row 
+        //save it 
+        result.push(rowBuilder(result[result.length - 1]))
+        missingRows--
+    }
+    return result
+};
+
+
+
+
+
+
+
+
+
+/**
+ * @param {number} numRows
+ * @return {number[][]}
+ */
 var generate = function (numRows) {
     function increase(arr) {
         let result = []
