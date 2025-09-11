@@ -1,0 +1,19 @@
+
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var removePalindromeSub = function (s) {
+    let l = Math.ceil(s.length / 2)
+    let i = 0
+    let isPalindormic = true
+
+    while (i <= l) {
+        if (s[i] != s[s.length - 1 - i]) isPalindormic = false
+        i++
+    }
+
+
+    return isPalindormic ? 1 : 2
+};
