@@ -32,3 +32,33 @@ var maxFreqSum = function (s) {
     return biggestVouwel + biggestConsonant
 };
 
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var maxFreqSum = function (s) {
+    let vowels = new Set(["a", "i", "e", "o", "u"])
+
+    let vowelsFinded = {}
+
+    let consonantFinded = {}
+
+    for (const char of s) {
+        //is a vowel ?
+        if (vowels.has(char)) {
+            if (vowelsFinded[char]) vowelsFinded[char]++
+            else vowelsFinded[char] = 1
+        } else {
+            //is a consonant
+            if (consonantFinded[char]) consonantFinded[char]++
+            else consonantFinded[char] = 1
+        }
+    }
+    let maxV = Math.max(...Object.values(vowelsFinded) , 0)
+
+    let maxC = Math.max(...Object.values(consonantFinded), 0 )
+
+
+     return maxV + maxC
+
+};
