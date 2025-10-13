@@ -22,3 +22,20 @@ var removeAnagrams = function (words) {
     }
     return result
 };
+
+/**
+ * @param {string[]} words
+ * @return {string[]}
+ */
+var removeAnagrams = function (words) {
+    let result = []
+    let last = ""
+    for (const word of words) {
+        let wordSorted = word.split("").sort().join("")
+        if (wordSorted!=last ) {
+            last = wordSorted
+            result.push(word)
+        }
+    }
+    return result
+};
