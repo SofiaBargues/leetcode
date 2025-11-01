@@ -12,4 +12,4 @@ var getSneakyNumbers = function (nums) {
         else set.add(num)
     }
     return result
-};
+};  
