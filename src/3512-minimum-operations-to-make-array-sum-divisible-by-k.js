@@ -13,3 +13,13 @@ var minOperations = function (nums, k) {
 
     return operations
 };
+
+
+/**
+ * @param {number[]} nums
+ * @param {number} k
+ * @return {number}
+ */
+var minOperations = function (nums, k) {
+ return nums.reduce((acc,curr)=> acc+curr,0)% k
+};
